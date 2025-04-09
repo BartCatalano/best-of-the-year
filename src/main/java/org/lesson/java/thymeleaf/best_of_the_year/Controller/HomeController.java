@@ -25,7 +25,7 @@ public class HomeController {
         return "home";
     }
 
-    // mwtodi che restituiscono le canzoni e i film
+    // mwtodi che restituiscono oggetti canzoni e  film
 
     public List<Movie> getBestMovies() {
         return Arrays.asList(
@@ -58,4 +58,8 @@ public String songs(Model model) {
     
     
 }
+
+// metodi per prendere gli id e mostrare i titoli corrispondenti
+
+
 }
