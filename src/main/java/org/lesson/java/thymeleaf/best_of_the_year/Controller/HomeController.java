@@ -9,7 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+
+
 
 
 // con questa annotazione setto questo file come un controller
@@ -60,6 +63,45 @@ public String songs(Model model) {
 }
 
 // metodi per prendere gli id e mostrare i titoli corrispondenti
+
+@GetMapping("/movies/{id}")
+public String movieDetails(Model model, @PathVariable("id") int id) {
+    List<Movie> movies = getBestMovies();
+// prendo la lista di oggetti con id dal metodo getmovies
+    for (Movie movie : movies) {
+        // creo un ciclo for che ittera sugli oggetti
+        if (movie.getId() == id) {
+            // creo un costrutto if che quando l'id corrisponde a quello richiesto va ad eseguire
+            model.addAttribute("type", "Film");
+            model.addAttribute("titolo", movie.getTitolo());
+            return "details";
+        }
+    }
+
+    model.addAttribute("type", "Film");
+    model.addAttribute("titolo", "Film con ID " + id + " non trovato");
+    return "details";
+}
+
+// Dettagli Canzoni
+@GetMapping("/songs/{id}")
+public String songDetails(Model model, @PathVariable("id") int id) {
+    // prendo la lista di oggetti con id dal metodo getsong
+    List<Song> songs = getBestSongs();
+// creo un ciclo for che ittera sugli oggetti
+    for (Song song : songs) {
+        // creo un costrutto if che quando l'id corrisponde a quello richiesto va ad eseguire
+        if (song.getId() == id) {
+            model.addAttribute("type", "Canzone");
+            model.addAttribute("titolo", song.getTitolo());
+            return "details";
+        }
+    }
+// creo la possibilità che l'id inserito non esista
+    model.addAttribute("type", "Canzone");
+    model.addAttribute("titolo", "Canzone con ID " + id + " non trovata");
+    return "details";
+}
 
 
 }

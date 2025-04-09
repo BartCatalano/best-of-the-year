@@ -11,8 +11,8 @@
     <ul>
         <!-- Itera sulla lista di oggetti Movie passata nel model -->
         <li th:each="song : ${songs}">
-            <!-- Visualizza il titolo di ciascun film -->
-            <span th:text="${song.titolo}"></span>
+            <!-- Visualizza il titolo di ciascun film come un link da usare poi per la pagina dettaglio-->
+            <a th:href="@{'/songs/' + ${song.id}}" th:text="${song.titolo}"></a>
         </li>
     </ul>
     

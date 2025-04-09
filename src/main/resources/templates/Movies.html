@@ -10,8 +10,8 @@
     <ul>
         <!-- Itera sulla lista di oggetti Movie passata nel model -->
         <li th:each="movie : ${movies}">
-            <!-- Visualizza il titolo di ciascun film -->
-            <span th:text="${movie.titolo}"></span>
+            <!-- Visualizza il titolo di ciascun film come link da usare poi nella pagina dettaglio-->
+            <a th:href="@{'/movies/' + ${movie.id}}" th:text="${movie.titolo}"></a>
         </li>
     </ul>
     

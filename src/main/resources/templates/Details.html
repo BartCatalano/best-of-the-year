@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   
+    <title>Movies</title>
+</head>
+<body>
+    <h1>Pagina Dettaglio</h1>
+    <!-- creo la parte dinamica in base all id inserito o alla canzone cliccata -->
+    <h2 th:text="'Tipo: ' + ${type}"></h2>
+    <p th:text="'Titolo: ' + ${titolo}"></p>
+    
+</body>
+</html>
