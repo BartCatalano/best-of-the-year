@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   
+    <title>Movies</title>
+</head>
+<body>
+    <h1>Pagina movies</span></h1>
+    <h1>Best Movies</h1>
+    <ul>
+        <!-- Itera sulla lista di oggetti Movie passata nel model -->
+        <li th:each="movie : ${movies}">
+            <!-- Visualizza il titolo di ciascun film -->
+            <span th:text="${movie.titolo}"></span>
+        </li>
+    </ul>
+    
+</body>
+</html>

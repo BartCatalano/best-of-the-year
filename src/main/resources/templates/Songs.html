@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   
+    <title>Songs</title>
+</head>
+<body>
+    <h1>Pagina Songs</h1>
+    <h2>Best Songs</h2>
+
+    <ul>
+        <!-- Itera sulla lista di oggetti Movie passata nel model -->
+        <li th:each="song : ${songs}">
+            <!-- Visualizza il titolo di ciascun film -->
+            <span th:text="${song.titolo}"></span>
+        </li>
+    </ul>
+    
+</body>
+</html>
