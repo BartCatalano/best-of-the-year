@@ -1,6 +1,7 @@
 package org.lesson.java.thymeleaf.best_of_the_year.Controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -12,7 +13,8 @@ public class HomeController {
 
     // creo il path che collega il file home.html a questo controller
     @GetMapping("/")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("name", "Bartolomeo");
         return "home";
     }
     
