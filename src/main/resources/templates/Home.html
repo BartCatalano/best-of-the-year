@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-   
+    <th:block th:replace="~{fragments/fragments :: styles }"></th:block>
+    
     <title>Home</title>
 </head>
 <body>
-    <div th:replace="fragments/fragments :: button('/', 'Home')"></div>
-    <div th:replace="fragments/fragments :: button('/songs', 'Songs')"></div>
-    <div th:replace="fragments/fragments :: button('/movies', 'Movie')"></div>
+
+    <div th:replace="~{fragments/fragments :: button('/', 'Home')}"></div>
+    <div th:replace="~{fragments/fragments :: button('/songs', 'Songs')}"></div>
+    <div th:replace="~{fragments/fragments :: button('/movies', 'Movie')}"></div>
 
     <h1>Best of the year by <span th:text="${name}">Tuo Nome</span></h1>
     
+
+
+    <div th:replace="~{fragments/fragments :: bootstrap}"></div>
 </body>
 </html>

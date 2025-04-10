@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-   
+    <th:block th:replace="~{fragments/fragments :: styles }"></th:block>
+    
     <title>Movies</title>
 </head>
 <body>
@@ -17,6 +18,6 @@
             <a th:href="@{'/movies/' + ${movie.id}}" th:text="${movie.titolo}"></a>
         </li>
     </ul>
-    
+    <div th:replace="~{fragments/fragments :: bootstrap}"></div>
 </body>
 </html>
