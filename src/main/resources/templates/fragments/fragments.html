@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <title>Fragments</title>
+   <th:block th:fragment="styles"></th:block>
+</head>
+<body>
+    <a 
+        th:fragment="button(link, title)"
+        th:href="${link}"
+        th:text="${title}">
+    </a>
+</body>
+</html>
